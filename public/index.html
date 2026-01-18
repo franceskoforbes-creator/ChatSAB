@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chat SAB</title>
+  <link rel="stylesheet" href="/style.css" />
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="kIu-Aehv7G4Cd0oi-FbCPpsNyVFC3Zut26MPJkyVFPc" />
+  <title>Chat SAB</title>
+</head>
+
+<body>
+  <div class="app" id="appRoot">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">SAB</div>
+        <div class="brandText">
+          <div class="title">Chat SAB</div>
+          <div class="sub">AI • Vision • Streaming • Profiles</div>
+        </div>
+      </div>
+
+      <div id="authBox" class="authBox">
+        <!-- render auth UI -->
+      </div>
+
+      <button id="newChatBtn" class="btn primary full" disabled>+ Новый чат</button>
+
+      <div class="sectionTitle">Чаты</div>
+      <div id="chatList" class="chatList"></div>
+
+      <div class="spacer"></div>
+      <button id="clearAllBtn" class="btn danger ghost full">Очистить чаты</button>
+      <div class="hint">Enter — отправить • Shift+Enter — новая строка • + — фото</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div id="chatTitle" class="chatTitle">Чат</div>
+          <div id="chatMeta" class="chatMeta">—</div>
+        </div>
+
+        <div class="rightControls">
+          <label class="toggle">
+            <input id="streamToggle" type="checkbox" checked />
+            <span class="slider"></span>
+            <span class="toggleText">Stream</span>
+          </label>
+
+          <button id="regenBtn" class="btn ghost" disabled>Regenerate</button>
+          <button id="settingsBtn" class="btn ghost">⚙ Настройки</button>
+          <button id="profileBtn" class="btn ghost">👤 Профиль</button>
+        </div>
+      </header>
+
+      <section id="messages" class="messages"></section>
+
+      <footer class="composer">
+        <div class="leftActions">
+          <button id="addImgBtn" class="plusBtn" title="Добавить изображение" disabled>+</button>
+          <input id="fileInput" type="file" accept="image/*" hidden />
+        </div>
+
+        <div class="inputWrap">
+          <textarea id="input" placeholder="Войдите, чтобы писать..." disabled></textarea>
+
+          <div id="imgPreview" class="imgPreview hidden">
+            <img id="imgPreviewEl" alt="preview" />
+            <button id="removeImgBtn" class="xBtn">×</button>
+          </div>
+        </div>
+
+        <div class="sendWrap">
+          <button id="stopBtn" class="btn ghost hidden">Stop</button>
+          <button id="sendBtn" class="btn primary" disabled>Отправить</button>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Settings modal -->
+  <div id="settingsModal" class="modal hidden">
+    <div class="modalCard">
+      <div class="modalHeader">
+        <div class="modalTitle">Настройки</div>
+        <button id="closeSettingsBtn" class="xBtn">×</button>
+      </div>
+      <div class="modalBody">
+        <div class="settingRow">
+          <div>
+            <div class="settingName">Тема</div>
+            <div class="settingDesc">Внешний вид приложения</div>
+          </div>
+          <select id="themeSelect" class="select">
+            <option value="dark">Тёмная</option>
+            <option value="light">Светлая</option>
+            <option value="neon">Неон</option>
+          </select>
+        </div>
+
+        <div class="settingRow">
+          <div>
+            <div class="settingName">Макс. история</div>
+            <div class="settingDesc">Сколько последних сообщений отправлять ИИ</div>
+          </div>
+          <select id="historySelect" class="select">
+            <option value="6">6</option>
+            <option value="10">10</option>
+            <option value="14">14</option>
+          </select>
+        </div>
+
+        <div class="settingRow">
+          <div>
+            <div class="settingName">Размер текста</div>
+            <div class="settingDesc">Удобнее читать</div>
+          </div>
+          <select id="fontSelect" class="select">
+            <option value="14">14px</option>
+            <option value="16">16px</option>
+            <option value="18">18px</option>
+          </select>
+        </div>
+      </div>
+      <div class="modalFooter">
+        <button id="saveSettingsBtn" class="btn primary">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile modal -->
+  <div id="profileModal" class="modal hidden">
+    <div class="modalCard">
+      <div class="modalHeader">
+        <div class="modalTitle">Профиль</div>
+        <button id="closeProfileBtn" class="xBtn">×</button>
+      </div>
+      <div class="modalBody" id="profileBody"></div>
+      <div class="modalFooter">
+        <button id="logoutBtn" class="btn danger">Выйти</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

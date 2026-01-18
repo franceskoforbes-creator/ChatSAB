@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": "vw229q9j3wmkfktcfm",
+      "username": "adilet",
+      "passwordHash": "$2a$10$39nLXIK36/K94hC7LwrCueZze7L3BJsnsImko88scQ1sf8WR4QkcC",
+      "plan": "FREE",
+      "createdAt": 1768489210930,
+      "usage": {}
+    },
+    {
+      "id": "7y42jw0pbixmkgi27p9",
+      "username": "shayakhmetadilet2010@gmail.com",
+      "passwordHash": "$2a$10$522F8OpDG.a.HdaT.vARhO2csJN4y.yk6uqHfTg5nJj1e0b5Kag2O",
+      "plan": "FREE",
+      "createdAt": 1768545052029,
+      "usage": {}
+    }
+  ]
+}
